@@ -1,0 +1,6 @@
+{
+  "name": "CareerAI",
+  "description": "AI-powered career roadmap, skill gap analysis, explainable recommendations, resume review, and interview prep for college students and graduates.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

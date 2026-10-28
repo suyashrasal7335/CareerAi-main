@@ -1,0 +1,949 @@
+export interface CareerSeed {
+  id: string;
+  careerName: string;
+  tagline: string;
+  description: string;
+  roles: string[];
+  requiredSkills: string[];
+  optionalSkills: string[];
+  preferredInterests: string[];
+  difficulty: 'Beginner' | 'Intermediate' | 'Advanced';
+  estPreparationMonths: string;
+  avgSalaryRange: string;
+  marketDemand: 'High' | 'Very High' | 'Growing' | 'Explosive';
+  overview: string;
+  responsibilities: string[];
+  toolsAndTech: string[];
+  beginnerMilestones: string[];
+  intermediateMilestones: string[];
+  advancedMilestones: string[];
+  interviewTopics: string[];
+  certifications: string[];
+}
+
+export interface ProjectSeed {
+  id: string;
+  title: string;
+  career: string;
+  difficulty: 'Beginner' | 'Intermediate' | 'Advanced';
+  technologies: string[];
+  skills: string[];
+  description: string;
+  problemStatement: string;
+  features: string[];
+  architecture: string;
+  estDuration: string;
+  portfolioValue: string;
+}
+
+export interface ResourceSeed {
+  id: string;
+  title: string;
+  type: 'Course' | 'Documentation' | 'YouTube' | 'Book' | 'Practice' | 'Certification';
+  url: string;
+  provider: string;
+  career: string;
+  skills: string[];
+  difficulty: 'Beginner' | 'Intermediate' | 'Advanced';
+  isFree: boolean;
+  description: string;
+}
+
+export const SEED_CAREERS: CareerSeed[] = [
+  {
+    id: 'ai-ml-engineer',
+    careerName: 'AI/ML Engineer',
+    tagline: 'Design, train, and deploy intelligent machine learning and deep learning models.',
+    description: 'Bridges data science and software engineering by building scalable predictive models, fine-tuning LLMs, and operationalizing machine learning pipelines.',
+    roles: ['Machine Learning Engineer', 'AI Engineer', 'Applied Scientist', 'Computer Vision Engineer', 'NLP Engineer', 'MLOps Specialist'],
+    requiredSkills: ['Python', 'Mathematics', 'Statistics', 'Machine Learning', 'Deep Learning', 'SQL', 'Git'],
+    optionalSkills: ['TensorFlow', 'PyTorch', 'NLP', 'Computer Vision', 'MLOps', 'Docker', 'FastAPI'],
+    preferredInterests: ['AI', 'Data', 'Coding', 'Research', 'Mathematics'],
+    difficulty: 'Intermediate',
+    estPreparationMonths: '6–9 months',
+    avgSalaryRange: '$110,000 – $170,000 / ₹12 – 28 LPA',
+    marketDemand: 'Explosive',
+    overview: 'AI & Machine Learning Engineers build artificial intelligence systems capable of learning from massive datasets, performing inference at low latency, and integrating into modern software applications.',
+    responsibilities: [
+      'Architecting and training supervised, unsupervised, and reinforcement learning models',
+      'Data preprocessing, feature engineering, and exploratory data analysis',
+      'Optimizing inference speeds and deploying models via REST APIs and MLOps pipelines',
+      'Fine-tuning foundation LLMs and embedding retrieval pipelines (RAG)',
+      'Evaluating performance metrics (F1-score, precision, recall, perplexity, latency)'
+    ],
+    toolsAndTech: ['Python', 'PyTorch', 'TensorFlow', 'Scikit-Learn', 'Pandas', 'NumPy', 'Hugging Face', 'MLflow', 'Docker', 'FastAPI'],
+    beginnerMilestones: [
+      'Master Python fundamentals, NumPy vectorization, and Pandas data frames',
+      'Solidify linear algebra, calculus, and descriptive & inferential statistics',
+      'Train classical ML algorithms: Linear Regression, Logistic Regression, Decision Trees'
+    ],
+    intermediateMilestones: [
+      'Understand Deep Learning concepts: Backpropagation, CNNs for vision, RNNs/Transformers for sequences',
+      'Implement PyTorch models from scratch and utilize transfer learning',
+      'Build end-to-end ML pipelines with feature stores, model serialization, and FastAPI servers'
+    ],
+    advancedMilestones: [
+      'Deploy production MLOps: CI/CD for models, drift monitoring, Docker containerization',
+      'Fine-tune open-weights LLMs with LoRA/QLoRA and build vector search retrieval systems',
+      'Scale training across distributed GPUs and optimize quantization (GGUF, TensorRT)'
+    ],
+    interviewTopics: ['Bias-Variance Tradeoff', 'Overfitting Prevention & Regularization', 'Loss Functions & Optimizers', 'Transformer Attention Mechanism', 'Feature Engineering & Cross Validation'],
+    certifications: ['TensorFlow Developer Certificate', 'AWS Certified Machine Learning - Specialty', 'DeepLearning.AI Machine Learning Specialization']
+  },
+  {
+    id: 'full-stack-developer',
+    careerName: 'Full Stack Developer',
+    tagline: 'Architect and build complete modern web applications from database to UI.',
+    description: 'Masters both client-side interfaces and scalable backend server logic, APIs, database architectures, and deployment pipelines.',
+    roles: ['Full Stack Engineer', 'Software Engineer', 'MERN Stack Developer', 'Web Developer', 'Backend/Frontend Hybrid'],
+    requiredSkills: ['HTML', 'CSS', 'JavaScript', 'TypeScript', 'React', 'Node.js', 'Express', 'SQL', 'Git'],
+    optionalSkills: ['Next.js', 'PostgreSQL', 'MongoDB', 'Docker', 'REST APIs', 'GraphQL', 'Tailwind CSS'],
+    preferredInterests: ['Coding', 'Web', 'Design', 'Product'],
+    difficulty: 'Beginner',
+    estPreparationMonths: '4–6 months',
+    avgSalaryRange: '$90,000 – $145,000 / ₹8 – 22 LPA',
+    marketDemand: 'Very High',
+    overview: 'Full Stack Developers understand the full lifecycle of modern web software. They create responsive, accessible user interfaces and back them with reliable database layers, authentication protocols, and scalable microservices.',
+    responsibilities: [
+      'Building performant, mobile-first responsive web applications with modern frontend frameworks',
+      'Designing robust RESTful or GraphQL APIs with clean architectural boundaries',
+      'Modeling relational and NoSQL databases, writing efficient queries and database migrations',
+      'Securing user authentication (OAuth, JWT, session tokens, CSRF protection)',
+      'Deploying applications to cloud environments (Vercel, AWS, Cloud Run, Docker)'
+    ],
+    toolsAndTech: ['React', 'TypeScript', 'Next.js', 'Node.js', 'Express', 'PostgreSQL', 'Prisma', 'MongoDB', 'Tailwind CSS', 'Docker'],
+    beginnerMilestones: [
+      'Master semantic HTML5, modern CSS layouts (Flexbox, Grid), and vanilla JavaScript ES6+',
+      'Learn Git version control, GitHub workflows, and command line navigation',
+      'Build dynamic multi-component interfaces using React hooks, props, and state management'
+    ],
+    intermediateMilestones: [
+      'Build robust Express backends with middleware, routing, and schema validation',
+      'Design relational databases using SQL and ORMs (Prisma, Drizzle, Sequelize)',
+      'Implement full JWT authentication with refresh tokens, password hashing, and role checks'
+    ],
+    advancedMilestones: [
+      'Implement server-side rendering, caching layers (Redis), and background task queues',
+      'Containerize full-stack apps with Docker Compose and set up GitHub Actions CI/CD',
+      'Architect microservices or modular monoliths with comprehensive test suites (Jest, Playwright)'
+    ],
+    interviewTopics: ['Event Loop & Async JavaScript', 'React Reconciliation & Virtual DOM', 'Database Indexing & Normalization', 'CORS, Cookies vs Tokens, and Security best practices', 'System Design: Scaling a Web App'],
+    certifications: ['Meta Full-Stack Developer Professional Certificate', 'AWS Certified Developer - Associate']
+  },
+  {
+    id: 'data-analyst',
+    careerName: 'Data Analyst',
+    tagline: 'Transform raw data into actionable insights, dashboards, and strategic decisions.',
+    description: 'Collects, cleans, and analyzes organizational data to identify trends, forecast outcomes, and empower business leaders to make informed decisions.',
+    roles: ['Data Analyst', 'BI Analyst', 'Product Analyst', 'Business Intelligence Developer', 'Marketing Analyst'],
+    requiredSkills: ['SQL', 'Excel', 'Python', 'Power BI', 'Tableau', 'Statistics'],
+    optionalSkills: ['Pandas', 'NumPy', 'Data Visualization', 'R', 'Storytelling', 'A/B Testing'],
+    preferredInterests: ['Data', 'Business', 'Analytics', 'Research'],
+    difficulty: 'Beginner',
+    estPreparationMonths: '3–5 months',
+    avgSalaryRange: '$75,000 – $115,000 / ₹6 – 16 LPA',
+    marketDemand: 'High',
+    overview: 'Data Analysts bridge technical databases with executive business strategy. They write complex SQL queries, transform messy datasets, and craft compelling visual dashboards that spotlight opportunities and inefficiencies.',
+    responsibilities: [
+      'Writing complex multi-table SQL queries, window functions, and CTEs to extract raw metrics',
+      'Cleaning and wrangling inconsistent datasets using Excel and Python Pandas',
+      'Building interactive executive dashboards in Tableau or Power BI with automated data refreshes',
+      'Conducting cohort analyses, churn forecasts, and A/B test statistical evaluations',
+      'Communicating analytical findings and business recommendations to non-technical stakeholders'
+    ],
+    toolsAndTech: ['SQL', 'PostgreSQL', 'Excel / Google Sheets', 'Power BI', 'Tableau', 'Python (Pandas, Seaborn)', 'dbt'],
+    beginnerMilestones: [
+      'Master Excel formulas (XLOOKUP, INDEX/MATCH, Pivot Tables) and data modeling',
+      'Learn relational SQL: SELECT, WHERE, GROUP BY, HAVING, and multi-table JOINS',
+      'Create your first interactive dashboard with clear KPI cards and trend line charts'
+    ],
+    intermediateMilestones: [
+      'Master advanced SQL: Window functions (RANK, ROW_NUMBER, LAG/LEAD), CTEs, and query optimization',
+      'Learn exploratory data analysis (EDA) using Python Pandas and Matplotlib/Seaborn',
+      'Design comprehensive Tableau or Power BI reports with DAX measures and parameter actions'
+    ],
+    advancedMilestones: [
+      'Statistical hypothesis testing, confidence intervals, p-values, and A/B test design',
+      'Automate data pipelines with SQL stored procedures or lightweight Python scripts',
+      'Build predictive churn and cohort retention models to provide forward-looking business advice'
+    ],
+    interviewTopics: ['SQL Joins vs Unions', 'Window Functions & Aggregations', 'Detecting and Handling Outliers', 'Designing an Executive KPI Dashboard', 'Explaining Complex Metrics to a CEO'],
+    certifications: ['Google Data Analytics Professional Certificate', 'Microsoft Certified: Power BI Data Analyst Associate']
+  },
+  {
+    id: 'data-scientist',
+    careerName: 'Data Scientist',
+    tagline: 'Extract mathematical patterns and predictive power from massive datasets.',
+    description: 'Combines computer science, probability, statistics, and machine learning to uncover hidden patterns and create predictive business models.',
+    roles: ['Data Scientist', 'Decision Scientist', 'Quantitative Analyst', 'Statistical Modeler', 'Machine Learning Scientist'],
+    requiredSkills: ['Python', 'SQL', 'Statistics', 'Machine Learning', 'Pandas', 'NumPy', 'Mathematics'],
+    optionalSkills: ['Scikit-Learn', 'Deep Learning', 'A/B Testing', 'Tableau', 'BigQuery', 'Spark'],
+    preferredInterests: ['Data', 'Mathematics', 'Research', 'Coding', 'Business'],
+    difficulty: 'Intermediate',
+    estPreparationMonths: '6–9 months',
+    avgSalaryRange: '$105,000 – $165,000 / ₹11 – 26 LPA',
+    marketDemand: 'High',
+    overview: 'Data Scientists formulate predictive algorithms and analytical experiments. They translate ambiguous business questions into rigorous statistical hypotheses and deploy predictive solutions.',
+    responsibilities: [
+      'Formulating statistical hypotheses and designing rigorous experimental A/B testing protocols',
+      'Extracting and cleaning multi-terabyte datasets across SQL, data lakes, and APIs',
+      'Training predictive models using ensemble algorithms (Random Forests, XGBoost, LightGBM)',
+      'Performing feature engineering, dimensionality reduction (PCA, t-SNE), and cluster analysis',
+      'Translating quantitative model outputs into strategic business initiatives'
+    ],
+    toolsAndTech: ['Python', 'SQL', 'Scikit-Learn', 'XGBoost', 'Pandas', 'NumPy', 'Jupyter', 'Statsmodels', 'Spark', 'Git'],
+    beginnerMilestones: [
+      'Master Python for data science, NumPy matrix operations, and Pandas dataframe operations',
+      'Deepen statistical foundations: probability distributions, Bayes theorem, central limit theorem',
+      'Implement linear and logistic regressions with rigorous residual analysis'
+    ],
+    intermediateMilestones: [
+      'Train supervised algorithms (SVM, Random Forests, Gradient Boosted Trees) with hyperparameter tuning',
+      'Perform unsupervised clustering (K-Means, DBSCAN, Hierarchical) and PCA dimensionality reduction',
+      'Run rigorous cross-validation and handle unbalanced datasets (SMOTE, class weighting)'
+    ],
+    advancedMilestones: [
+      'Build end-to-end predictive pipelines and deploy models with FastAPI or Flask',
+      'Work with big data systems like Apache Spark, Databricks, or Google BigQuery',
+      'Apply causal inference and uplift modeling to quantify true business impact'
+    ],
+    interviewTopics: ['P-values & Hypothesis Testing', 'Logistic Regression Math & Odds Ratios', 'Random Forest vs XGBoost mechanics', 'Precision vs Recall trade-offs in fraud detection', 'Data Leakage Prevention'],
+    certifications: ['IBM Data Science Professional Certificate', 'Databricks Certified Associate Data Scientist']
+  },
+  {
+    id: 'cybersecurity-analyst',
+    careerName: 'Cybersecurity Analyst',
+    tagline: 'Defend networks, systems, and sensitive data against cyber threats and breaches.',
+    description: 'Monitors infrastructure, investigates security alerts, audits vulnerabilities, and enforces defense-in-depth protection strategies.',
+    roles: ['Cybersecurity Analyst', 'SOC Analyst', 'Information Security Officer', 'Vulnerability Assessment Analyst', 'Penetration Tester'],
+    requiredSkills: ['Networking', 'Linux', 'Ethical Hacking', 'Cybersecurity', 'Python'],
+    optionalSkills: ['SIEM (Splunk)', 'Wireshark', 'Cryptography', 'Cloud Security', 'Firewalls', 'Incident Response'],
+    preferredInterests: ['Cybersecurity', 'Networking', 'Coding', 'Research'],
+    difficulty: 'Intermediate',
+    estPreparationMonths: '5–8 months',
+    avgSalaryRange: '$85,000 – $140,000 / ₹7 – 20 LPA',
+    marketDemand: 'Very High',
+    overview: 'Cybersecurity Analysts protect networks, endpoints, and cloud infrastructure from adversaries. They configure intrusion detection systems, analyze network traffic, and execute incident response procedures.',
+    responsibilities: [
+      'Monitoring Security Information and Event Management (SIEM) tools for suspicious activity',
+      'Performing vulnerability scans, vulnerability assessments, and patch management',
+      'Analyzing packet captures with Wireshark to detect malware beacons and command-and-control channels',
+      'Hardening Linux and Windows servers according to CIS Benchmarks',
+      'Investigating phishing incidents, zero-days, and writing post-incident response documentation'
+    ],
+    toolsAndTech: ['Linux', 'Wireshark', 'Splunk', 'Nmap', 'Metasploit', 'Burp Suite', 'Snort', 'Python', 'Bash', 'Docker'],
+    beginnerMilestones: [
+      'Master TCP/IP networking, OSI model layers, DNS, DHCP, routing, and firewalls',
+      'Learn Linux command line navigation, file permissions, shell scripting, and sysadmin tasks',
+      'Understand core security principles: CIA triad, authentication factors, hashing, and encryption'
+    ],
+    intermediateMilestones: [
+      'Capture and inspect live network packets with Wireshark and run port audits with Nmap',
+      'Deploy and configure a SIEM platform (Splunk or ELK Stack) to ingest and alert on security logs',
+      'Identify and remediate the OWASP Top 10 web application vulnerabilities'
+    ],
+    advancedMilestones: [
+      'Perform simulated red-team attacks in lab environments (TryHackMe, HackTheBox)',
+      'Conduct digital forensics: memory analysis (Volatility) and disk image triage (Autopsy)',
+      'Automate incident triage and threat hunting with Python and Bash scripts'
+    ],
+    interviewTopics: ['TCP 3-Way Handshake & Flags', 'Symmetric vs Asymmetric Encryption', 'How to handle an active ransomware incident', 'OWASP Top 10 vulnerabilities (SQLi, XSS, CSRF)', 'SIEM correlation rules'],
+    certifications: ['CompTIA Security+', 'Certified Information Systems Security Professional (CISSP - Associate)', 'Certified Ethical Hacker (CEH)']
+  },
+  {
+    id: 'cloud-engineer',
+    careerName: 'Cloud Engineer',
+    tagline: 'Architect and scale robust cloud infrastructure across AWS, Azure, and GCP.',
+    description: 'Designs, implements, and manages cloud infrastructure, virtualization, networking, and serverless architectures for maximum reliability and cost efficiency.',
+    roles: ['Cloud Engineer', 'Cloud Solutions Architect', 'Cloud Infrastructure Engineer', 'AWS/Azure Specialist', 'Site Reliability Engineer'],
+    requiredSkills: ['Cloud', 'AWS', 'Linux', 'Networking', 'Python'],
+    optionalSkills: ['Terraform', 'Azure', 'Google Cloud', 'Docker', 'Kubernetes', 'Serverless'],
+    preferredInterests: ['Cloud', 'Coding', 'Networking', 'Systems'],
+    difficulty: 'Intermediate',
+    estPreparationMonths: '5–8 months',
+    avgSalaryRange: '$100,000 – $155,000 / ₹9 – 24 LPA',
+    marketDemand: 'Very High',
+    overview: 'Cloud Engineers build the backbone of modern tech companies. They provision virtual networks, compute instances, distributed storage, and identity management in public clouds.',
+    responsibilities: [
+      'Architecting resilient multi-tier cloud environments on AWS, Azure, or GCP',
+      'Writing Infrastructure as Code (IaC) templates using Terraform and CloudFormation',
+      'Configuring VPCs, subnets, route tables, Internet Gateways, and security groups',
+      'Managing identity, permissions, and zero-trust policies via IAM',
+      'Optimizing cloud workloads for high availability, fault tolerance, and cost reduction'
+    ],
+    toolsAndTech: ['AWS (EC2, S3, RDS, Lambda, VPC)', 'Terraform', 'Linux', 'Docker', 'Python', 'Git', 'Bash', 'Azure', 'Google Cloud'],
+    beginnerMilestones: [
+      'Understand cloud fundamentals: IaaS vs PaaS vs SaaS, regions, availability zones, and elasticity',
+      'Master AWS Core services: EC2 virtual machines, S3 object storage, and IAM policies',
+      'Configure Linux servers hosted in the cloud with SSH keys and basic web servers (Nginx)'
+    ],
+    intermediateMilestones: [
+      'Design secure virtual private clouds (VPCs) with public/private subnets and NAT gateways',
+      'Provision cloud infrastructure declaratively using Terraform modules and state management',
+      'Deploy serverless architectures using AWS Lambda, API Gateway, and DynamoDB'
+    ],
+    advancedMilestones: [
+      'Implement auto-scaling groups, application load balancers, and multi-region disaster recovery',
+      'Implement cloud security audits, encryption at rest and in transit, and KMS key management',
+      'Set up CloudWatch monitoring, structured alerting, and FinOps cost optimization dashboards'
+    ],
+    interviewTopics: ['Public vs Private Subnets & NAT Gateways', 'S3 Storage Classes & Lifecycle Rules', 'IAM Roles vs Policies vs Groups', 'High Availability Architecture Design', 'Terraform State & Drift Management'],
+    certifications: ['AWS Certified Solutions Architect - Associate', 'Microsoft Certified: Azure Fundamentals / Administrator', 'Google Associate Cloud Engineer']
+  },
+  {
+    id: 'devops-engineer',
+    careerName: 'DevOps Engineer',
+    tagline: 'Bridge code and operations with CI/CD automation, containers, and orchestration.',
+    description: 'Automates software delivery pipelines, manages containerized services, and ensures high availability, observability, and continuous integration.',
+    roles: ['DevOps Engineer', 'Site Reliability Engineer (SRE)', 'Platform Engineer', 'Release Engineer', 'Infrastructure Automation Engineer'],
+    requiredSkills: ['Linux', 'Docker', 'Git', 'CI/CD', 'Python', 'Networking'],
+    optionalSkills: ['Kubernetes', 'Terraform', 'AWS', 'GitHub Actions', 'Prometheus', 'Grafana', 'Ansible'],
+    preferredInterests: ['Coding', 'Cloud', 'Automation', 'Systems'],
+    difficulty: 'Intermediate',
+    estPreparationMonths: '6–9 months',
+    avgSalaryRange: '$105,000 – $160,000 / ₹10 – 25 LPA',
+    marketDemand: 'Very High',
+    overview: 'DevOps Engineers ensure code moves seamlessly from developer laptops to production environments. They eliminate manual deployment errors through automated pipelines and keep systems healthy 24/7.',
+    responsibilities: [
+      'Designing and maintaining robust CI/CD pipelines with GitHub Actions, GitLab CI, or Jenkins',
+      'Containerizing multi-service applications using Docker and optimizing image sizes',
+      'Orchestrating container clusters at scale using Kubernetes (Pods, Deployments, Services, Ingress)',
+      'Implementing comprehensive observability: logging, metrics, and alerting (Prometheus & Grafana)',
+      'Automating infrastructure configuration management using Ansible or Terraform'
+    ],
+    toolsAndTech: ['Docker', 'Kubernetes', 'GitHub Actions', 'Linux', 'Terraform', 'Prometheus', 'Grafana', 'Ansible', 'Git', 'Bash'],
+    beginnerMilestones: [
+      'Master Linux terminal operations, bash scripting, file systems, process management, and permissions',
+      'Master Git branching strategies (Gitflow, trunk-based development) and pull request automation',
+      'Write Dockerfiles, build multi-stage images, and manage multi-container apps with Docker Compose'
+    ],
+    intermediateMilestones: [
+      'Build end-to-end CI/CD pipelines in GitHub Actions with automated testing, linting, and image pushes',
+      'Learn Kubernetes core concepts: Pods, Deployments, Services, ConfigMaps, and Namespaces',
+      'Automate server provisioning with Ansible playbooks and declarative Terraform scripts'
+    ],
+    advancedMilestones: [
+      'Manage production Kubernetes clusters with Helm charts, Ingress controllers, and RBAC',
+      'Set up full observability stacks: Prometheus scraping, Grafana dashboards, and Alertmanager',
+      'Implement GitOps workflows with ArgoCD and practice Chaos Engineering principles'
+    ],
+    interviewTopics: ['Docker Layer Caching & Multi-Stage Builds', 'Kubernetes Architecture: Control Plane vs Worker Nodes', 'Blue-Green vs Canary Deployment Strategies', 'Prometheus Metrics Types (Counter, Gauge, Histogram)', 'Troubleshooting a CrashLoopBackOff'],
+    certifications: ['Certified Kubernetes Administrator (CKA)', 'Docker Certified Associate', 'AWS Certified DevOps Engineer - Professional']
+  },
+  {
+    id: 'ui-ux-designer',
+    careerName: 'UI/UX Designer',
+    tagline: 'Design intuitive, accessible, and delight-inducing digital experiences.',
+    description: 'Conducts user research, designs wireframes, builds high-fidelity Figma prototypes, and tests interfaces for optimal usability and aesthetic delight.',
+    roles: ['UI Designer', 'UX Designer', 'Product Designer', 'Interaction Designer', 'Design Systems Specialist'],
+    requiredSkills: ['Design', 'Figma', 'Wireframing', 'Prototyping', 'User Research'],
+    optionalSkills: ['Design Systems', 'HTML', 'CSS', 'Usability Testing', 'Information Architecture', 'Motion Design'],
+    preferredInterests: ['Design', 'Product', 'Web', 'Creative'],
+    difficulty: 'Beginner',
+    estPreparationMonths: '3–5 months',
+    avgSalaryRange: '$80,000 – $130,000 / ₹7 – 18 LPA',
+    marketDemand: 'Growing',
+    overview: 'UI/UX Designers ensure that digital products solve real human problems while looking beautiful and feeling intuitive. They conduct user interviews, map customer journeys, and craft production design systems.',
+    responsibilities: [
+      'Conducting user interviews, empathy mapping, and competitive usability audits',
+      'Creating low-fidelity wireframes and user flow diagrams to validate product logic',
+      'Designing pixel-perfect high-fidelity screens, components, and interactive prototypes in Figma',
+      'Building and maintaining scalable Design Systems with tokenized typography, colors, and components',
+      'Running usability tests, collecting qualitative feedback, and presenting design rationales'
+    ],
+    toolsAndTech: ['Figma', 'FigJam', 'Miro', 'Adobe XD', 'Protopie', 'UserTesting', 'HTML/CSS basics'],
+    beginnerMilestones: [
+      'Understand core UX principles: Jakob’s Law, Fitts’s Law, Hick’s Law, and accessibility contrast',
+      'Master Figma interface, auto-layout, constraints, variants, and component properties',
+      'Conduct user interviews, write user personas, and build wireframe user journeys'
+    ],
+    intermediateMilestones: [
+      'Create high-fidelity interactive prototypes with micro-interactions and smart animations',
+      'Architect a comprehensive Design System with atomic component hierarchy and color tokens',
+      'Conduct moderated usability testing sessions and synthesize findings into actionable redesigns'
+    ],
+    advancedMilestones: [
+      'Collaborate closely with engineers by inspecting code constraints, responsive breakpoints, and CSS tokens',
+      'Design complex enterprise dashboard software and multi-step data-intensive workflows',
+      'Publish a comprehensive 3-project portfolio case study explaining problem, process, iterations, and impact'
+    ],
+    interviewTopics: ['Design Thinking Process', 'Explaining a Figma Design System Structure', 'How to handle conflicting feedback from PMs and Engineers', 'Designing for WCAG AA Accessibility', 'Portfolio Case Study Walkthrough'],
+    certifications: ['Google UX Design Professional Certificate', 'Nielsen Norman Group UX Master Certified']
+  },
+  {
+    id: 'product-manager',
+    careerName: 'Product Manager',
+    tagline: 'Define product vision, align teams, and ship products users love.',
+    description: 'Sits at the intersection of business, technology, and user experience to drive product strategy, roadmap prioritization, and feature delivery.',
+    roles: ['Associate Product Manager', 'Product Manager', 'Technical Product Manager', 'Growth Product Manager'],
+    requiredSkills: ['Product', 'Business', 'Agile/Scrum', 'Data Analysis', 'User Stories'],
+    optionalSkills: ['SQL', 'Roadmapping', 'Market Research', 'A/B Testing', 'Wireframing', 'Jira'],
+    preferredInterests: ['Product', 'Business', 'Management', 'Design'],
+    difficulty: 'Intermediate',
+    estPreparationMonths: '4–7 months',
+    avgSalaryRange: '$100,000 – $160,000 / ₹12 – 28 LPA',
+    marketDemand: 'Growing',
+    overview: 'Product Managers identify the "why" and "what" of a product. They coordinate across design, engineering, sales, and executive teams to build features that generate real customer and business value.',
+    responsibilities: [
+      'Defining product vision, strategic goals, and quarterly roadmap priorities',
+      'Writing detailed Product Requirement Documents (PRDs), user stories, and acceptance criteria',
+      'Analyzing customer telemetry, feedback loops, and business KPIs to validate feature value',
+      'Leading sprint planning, backlog grooming, and standups with engineering teams',
+      'Managing stakeholder expectations and balancing technical debt against new feature velocity'
+    ],
+    toolsAndTech: ['Jira', 'Confluence', 'Figma', 'Mixpanel / Amplitude', 'SQL', 'Notion', 'Google Analytics'],
+    beginnerMilestones: [
+      'Understand the product lifecycle: Ideation, Discovery, Validation, Build, Launch, Iteration',
+      'Learn Agile and Scrum frameworks: User stories, story points, epics, sprint planning',
+      'Write structured Product Requirement Documents (PRDs) for sample tech features'
+    ],
+    intermediateMilestones: [
+      'Define North Star metrics, input metrics, and pirate funnel metrics (AARRR)',
+      'Perform user interviews, market sizing (TAM/SAM/SOM), and competitor SWOT analyses',
+      'Run prioritized roadmap scoring using RICE (Reach, Impact, Confidence, Effort) framework'
+    ],
+    advancedMilestones: [
+      'Analyze behavioral telemetry using SQL queries and cohort retention curves',
+      'Design and interpret multivariate A/B tests with statistical significance',
+      'Lead end-to-end Go-To-Market (GTM) launches including marketing, sales enablement, and support'
+    ],
+    interviewTopics: ['Favorite Product & How to Improve It', 'Product Prioritization Frameworks (RICE, Kano)', 'How to handle engineering saying a feature takes 6 months', 'Root cause analysis when a key metric drops 20%', 'Designing an MVP for a novel idea'],
+    certifications: ['Certified Scrum Product Owner (CSPO)', 'Product School Product Manager Certificate']
+  },
+  {
+    id: 'mobile-app-developer',
+    careerName: 'Mobile App Developer',
+    tagline: 'Create native and cross-platform mobile apps for iOS and Android.',
+    description: 'Builds responsive, high-performance mobile applications using technologies like React Native, Flutter, Swift, or Kotlin.',
+    roles: ['Mobile Developer', 'React Native Developer', 'Flutter Developer', 'iOS Developer', 'Android Developer'],
+    requiredSkills: ['JavaScript', 'TypeScript', 'React', 'Mobile', 'Git'],
+    optionalSkills: ['React Native', 'Flutter', 'Dart', 'Swift', 'Kotlin', 'REST APIs', 'Firebase'],
+    preferredInterests: ['Coding', 'Mobile', 'Design', 'Web'],
+    difficulty: 'Intermediate',
+    estPreparationMonths: '4–7 months',
+    avgSalaryRange: '$90,000 – $145,000 / ₹8 – 22 LPA',
+    marketDemand: 'High',
+    overview: 'Mobile App Developers create the handheld applications millions use every hour. They master device lifecycle events, push notifications, offline syncing, and mobile UI design patterns.',
+    responsibilities: [
+      'Building performant mobile UIs with smooth 60fps animations across iOS and Android',
+      'Managing device hardware integrations (Camera, GPS, Biometrics, Bluetooth)',
+      'Implementing offline-first data caching, local storage (SQLite, WatermelonDB), and background sync',
+      'Integrating push notification services (APNs, Firebase Cloud Messaging)',
+      'Submitting and releasing apps through Apple App Store and Google Play Store review processes'
+    ],
+    toolsAndTech: ['React Native / Expo', 'Flutter / Dart', 'TypeScript', 'Redux / Zustand', 'Firebase', 'Xcode', 'Android Studio'],
+    beginnerMilestones: [
+      'Master core JavaScript/TypeScript and React component lifecycle and state hooks',
+      'Learn React Native basics: View, Text, StyleSheet, FlatList, and Flexbox styling',
+      'Set up Expo development environments on real physical mobile devices'
+    ],
+    intermediateMilestones: [
+      'Implement multi-screen navigation stacks, tab bars, and modals using React Navigation',
+      'Integrate device APIs: Camera access, image pickers, geolocation, and secure keychain storage',
+      'Connect backend REST APIs with resilient network handling and offline SQLite caching'
+    ],
+    advancedMilestones: [
+      'Optimize mobile performance: reduce bundle sizes, memoize FlatList renders, eliminate frame drops',
+      'Configure push notifications, deep links, and analytics tracking',
+      'Set up automated mobile CI/CD pipelines (Fastlane, EAS Build) for automated app store releases'
+    ],
+    interviewTopics: ['React Native Bridge / New Architecture (JSI, Fabric)', 'State Management in Mobile (Zustand vs Redux)', 'Handling offline data sync & conflict resolution', 'Mobile Memory Leaks & Image Optimization', 'App Store Guidelines & Review Pitfalls'],
+    certifications: ['Meta React Native Specialization', 'Google Associate Android Developer']
+  },
+  {
+    id: 'software-developer',
+    careerName: 'Software Developer',
+    tagline: 'Engineers reliable algorithms, data structures, and core software solutions.',
+    description: 'Writes clean, maintainable software across backend services, distributed systems, and desktop applications using foundational Computer Science principles.',
+    roles: ['Software Development Engineer (SDE I/II)', 'Backend Developer', 'Core Engineer', 'Systems Programmer'],
+    requiredSkills: ['C++', 'Java', 'Python', 'Data Structures', 'Algorithms', 'SQL', 'Git'],
+    optionalSkills: ['Object Oriented Design', 'Design Patterns', 'System Design', 'Operating Systems', 'Multi-threading'],
+    preferredInterests: ['Coding', 'Mathematics', 'Systems', 'Research'],
+    difficulty: 'Intermediate',
+    estPreparationMonths: '5–8 months',
+    avgSalaryRange: '$95,000 – $155,000 / ₹9 – 25 LPA',
+    marketDemand: 'Very High',
+    overview: 'Software Developers are the master builders of computer science. They write performant code, optimize time and space complexity, and solve core computational challenges.',
+    responsibilities: [
+      'Designing and implementing robust software architectures using Object-Oriented Principles',
+      'Solving algorithmic challenges and optimizing runtime time and memory complexity',
+      'Writing multi-threaded and concurrent software routines with thread safety',
+      'Authoring comprehensive unit, integration, and regression test suites',
+      'Collaborating in code reviews, technical specification writing, and system architecture planning'
+    ],
+    toolsAndTech: ['Java', 'C++', 'Python', 'Spring Boot', 'Git', 'Linux', 'SQL', 'Docker', 'JUnit', 'Maven/Gradle'],
+    beginnerMilestones: [
+      'Master core programming language syntax, pointers/memory concepts, and OOP principles (Inheritance, Polymorphism, Encapsulation)',
+      'Learn fundamental Data Structures: Arrays, Linked Lists, Stacks, Queues, Hash Tables',
+      'Solve 100+ beginner algorithmic problems focusing on Time & Space Complexity (Big-O)'
+    ],
+    intermediateMilestones: [
+      'Master advanced Data Structures: Trees (BST, AVL), Heaps, Graphs (BFS, DFS), and Tries',
+      'Implement algorithmic paradigms: Dynamic Programming, Greedy, Backtracking, Divide & Conquer',
+      'Build a production backend service with database transactions and unit tests'
+    ],
+    advancedMilestones: [
+      'Study low-level Operating Systems topics: Processes, Threads, Memory Virtualization, Sockets',
+      'Design scalable distributed systems: Load Balancers, Caching, Sharding, CAP Theorem',
+      'Practice mock Technical Coding & System Design interviews under timed conditions'
+    ],
+    interviewTopics: ['Big-O Analysis', 'Graph Traversal (Dijkstra, Topological Sort)', 'Dynamic Programming Memoization', 'SOLID Design Principles', 'Concurrency, Deadlocks & Race Conditions'],
+    certifications: ['Oracle Certified Professional: Java SE Developer', 'HackerRank Problem Solving (Advanced)']
+  },
+  {
+    id: 'business-analyst',
+    careerName: 'Business Analyst',
+    tagline: 'Translate complex business requirements into clear technical specifications.',
+    description: 'Analyzes business processes, discovers system requirements, evaluates feasibility, and coordinates between business stakeholders and technical developers.',
+    roles: ['Business Analyst', 'IT Business Analyst', 'Systems Analyst', 'Operations Analyst', 'Agile BA'],
+    requiredSkills: ['Business', 'Excel', 'SQL', 'Agile/Scrum', 'Documentation'],
+    optionalSkills: ['Process Mapping', 'BPMN', 'Tableau', 'Jira', 'Use Cases', 'Requirements Gathering'],
+    preferredInterests: ['Business', 'Management', 'Data', 'Product'],
+    difficulty: 'Beginner',
+    estPreparationMonths: '3–5 months',
+    avgSalaryRange: '$75,000 – $120,000 / ₹6 – 16 LPA',
+    marketDemand: 'High',
+    overview: 'Business Analysts ensure technology teams build exactly what the business requires to solve bottlenecks and increase profitability.',
+    responsibilities: [
+      'Eliciting detailed business requirements through stakeholder interviews and workshops',
+      'Mapping current state (As-Is) and target future state (To-Be) business processes in BPMN',
+      'Translating high-level needs into detailed functional and non-functional requirements (BRDs, FRDs)',
+      'Validating solutions through User Acceptance Testing (UAT) and test cases',
+      'Analyzing business datasets to quantify process improvements and cost-benefit ratios'
+    ],
+    toolsAndTech: ['Excel', 'SQL', 'Jira', 'Confluence', 'Lucidchart / Visio', 'Tableau', 'Power BI'],
+    beginnerMilestones: [
+      'Master business process analysis and workflow diagramming using BPMN standards',
+      'Learn advanced Excel for financial and operational modeling',
+      'Write clear, unambiguous User Stories with Given-When-Then acceptance criteria'
+    ],
+    intermediateMilestones: [
+      'Query business databases using SQL to validate assumptions and data flows',
+      'Lead User Acceptance Testing (UAT) cycles and manage defect tracking in Jira',
+      'Conduct GAP analysis and feasibility assessments for enterprise software migrations'
+    ],
+    advancedMilestones: [
+      'Facilitate executive requirement workshops and negotiate competing stakeholder priorities',
+      'Calculate ROI and NPV financial projections for large digital transformation initiatives',
+      'Design automated KPI reporting dashboards to track operational process velocity'
+    ],
+    interviewTopics: ['Requirements Elicitation Techniques', 'Handling Conflicting Stakeholder Demands', 'Differences between Functional vs Non-Functional Requirements', 'Writing a UAT Test Plan', 'Explaining a Business Process Re-engineering Project'],
+    certifications: ['Entry Certificate in Business Analysis (ECBA - IIBA)', 'Certified Business Analysis Professional (CBAP)']
+  },
+  {
+    id: 'database-engineer',
+    careerName: 'Database Engineer',
+    tagline: 'Design, optimize, and secure high-performance relational and NoSQL databases.',
+    description: 'Specializes in database schemas, query optimization, high availability replication, indexing strategies, and data warehousing architectures.',
+    roles: ['Database Engineer', 'Database Administrator (DBA)', 'Data Architect', 'SQL Specialist', 'Database Reliability Engineer'],
+    requiredSkills: ['SQL', 'PostgreSQL', 'Database Design', 'Linux', 'Python'],
+    optionalSkills: ['MySQL', 'MongoDB', 'Redis', 'Performance Tuning', 'Replication', 'Database Indexing', 'Sharding'],
+    preferredInterests: ['Data', 'Systems', 'Coding', 'Architecture'],
+    difficulty: 'Intermediate',
+    estPreparationMonths: '5–8 months',
+    avgSalaryRange: '$95,000 – $150,000 / ₹9 – 23 LPA',
+    marketDemand: 'High',
+    overview: 'Database Engineers are the custodians of enterprise information. They ensure that mission-critical data remains durable, protected, lightning-fast to query, and resilient against failures.',
+    responsibilities: [
+      'Designing normalized relational schemas and high-throughput NoSQL document models',
+      'Profiling slow queries using EXPLAIN ANALYZE and architecting optimal B-tree / GIN indexes',
+      'Configuring master-replica streaming replication, automated failovers, and backup strategies',
+      'Tuning database memory parameters (buffer pools, work_mem, connection pooling)',
+      'Managing zero-downtime schema migrations for high-traffic production databases'
+    ],
+    toolsAndTech: ['PostgreSQL', 'MySQL', 'MongoDB', 'Redis', 'pgAdmin', 'Docker', 'Linux', 'Python', 'Flyway/Liquibase'],
+    beginnerMilestones: [
+      'Master SQL DDL and DML operations, constraints, foreign keys, and cascading rules',
+      'Understand relational normalization (1NF through 3NF/BCNF) and entity-relationship diagrams (ERDs)',
+      'Install and administer local PostgreSQL instances on Linux and Docker'
+    ],
+    intermediateMilestones: [
+      'Deep dive into query optimization: execution plans, cost estimation, and composite indexes',
+      'Implement ACID transactions with appropriate isolation levels (Read Committed, Repeatable Read, Serializable)',
+      'Set up connection pooling using PgBouncer and optimize database server memory settings'
+    ],
+    advancedMilestones: [
+      'Configure streaming physical replication, logical replication, and automated patroni failover',
+      'Implement table partitioning, database sharding, and caching layers with Redis',
+      'Design disaster recovery procedures with point-in-time recovery (PITR) and write-ahead logs (WAL)'
+    ],
+    interviewTopics: ['ACID Properties & Isolation Anomalies (Dirty Read, Phantom Read)', 'Clustered vs Non-Clustered Indexes', 'How EXPLAIN ANALYZE works in PostgreSQL', 'Horizontal Sharding vs Vertical Partitioning', 'Designing a zero-downtime database migration'],
+    certifications: ['PostgreSQL Certified Professional', 'Oracle Certified Professional: Database Administrator']
+  }
+];
+
+export const SEED_PROJECTS: ProjectSeed[] = [
+  {
+    id: 'proj-1',
+    title: 'Student Placement Performance Dashboard',
+    career: 'Data Analyst',
+    difficulty: 'Beginner',
+    technologies: ['SQL', 'Excel', 'Power BI'],
+    skills: ['SQL', 'Data Visualization', 'Statistics'],
+    description: 'Analyze real-world college placement metrics across branches, CGPAs, and test scores to identify hiring trends.',
+    problemStatement: 'College placement cells struggle to identify which student skill profiles correlate with higher offer packages.',
+    features: [
+      'Cleaned dataset of 5,000+ student placement records',
+      'Interactive Power BI report with branch-wise salary distribution',
+      'Dynamic slicers for CGPA thresholds and internship experience',
+      'Executive summary cards showing average package and placement %'
+    ],
+    architecture: 'PostgreSQL database -> Power BI Desktop data model -> Automated DAX metrics -> Executive PDF report',
+    estDuration: '1–2 weeks',
+    portfolioValue: 'Demonstrates end-to-end data cleansing, business metric modeling, and professional visualization.'
+  },
+  {
+    id: 'proj-2',
+    title: 'Customer Churn Prediction Model',
+    career: 'AI/ML Engineer',
+    difficulty: 'Intermediate',
+    technologies: ['Python', 'Scikit-Learn', 'Pandas', 'FastAPI'],
+    skills: ['Python', 'Machine Learning', 'Statistics', 'Docker'],
+    description: 'Build and deploy a supervised machine learning model that predicts customer churn probability with 88%+ accuracy.',
+    problemStatement: 'SaaS companies lose millions due to unpredicted customer cancellations and lack of timely retention interventions.',
+    features: [
+      'Exploratory data analysis with correlation heatmaps and boxplots',
+      'Handling class imbalance using SMOTE and class-weight balancing',
+      'Ensemble modeling comparing Random Forest, XGBoost, and Logistic Regression',
+      'FastAPI endpoint returning probability scores and top contributing feature factors'
+    ],
+    architecture: 'Python Jupyter EDA -> Scikit-Learn Pipeline serialization (joblib) -> FastAPI REST endpoint -> Docker container',
+    estDuration: '3–4 weeks',
+    portfolioValue: 'Shows mastery of feature engineering, model selection, hyperparameter tuning, and API serving.'
+  },
+  {
+    id: 'proj-3',
+    title: 'Collaborative Real-Time Task Management Suite',
+    career: 'Full Stack Developer',
+    difficulty: 'Intermediate',
+    technologies: ['React', 'TypeScript', 'Node.js', 'Express', 'PostgreSQL', 'Socket.io'],
+    skills: ['React', 'TypeScript', 'Node.js', 'SQL', 'WebSockets'],
+    description: 'A Trello-style project management board with live multi-user collaboration, drag-and-drop, and JWT authentication.',
+    problemStatement: 'Remote development teams require responsive, real-time board updates without page refreshes.',
+    features: [
+      'Secure registration and login with JWT and bcrypt password hashing',
+      'Kanban board columns with smooth drag-and-drop task ordering',
+      'Instant WebSocket broadcasts when teammates move or edit cards',
+      'PostgreSQL schema with relational constraints and team permissions'
+    ],
+    architecture: 'React + Tailwind frontend -> Express REST & WebSocket server -> PostgreSQL with Prisma ORM',
+    estDuration: '3–4 weeks',
+    portfolioValue: 'Proves full-stack fluency, state synchronization, relational database modeling, and clean UI engineering.'
+  },
+  {
+    id: 'proj-4',
+    title: 'Automated CI/CD Pipeline & Cloud Deployment',
+    career: 'DevOps Engineer',
+    difficulty: 'Intermediate',
+    technologies: ['Docker', 'GitHub Actions', 'AWS EC2', 'Nginx', 'Terraform'],
+    skills: ['Docker', 'CI/CD', 'Linux', 'AWS', 'Terraform'],
+    description: 'Build an automated zero-downtime deployment pipeline that tests, containerizes, and deploys code on every Git push.',
+    problemStatement: 'Manual server deployments lead to configuration drift, server downtime, and human deployment blunders.',
+    features: [
+      'Multi-stage Dockerfile producing a minimal 30MB production image',
+      'GitHub Actions workflow running unit tests, lint checks, and security scans',
+      'Automated SSH deployment to AWS EC2 with Docker Compose restart',
+      'Nginx reverse proxy with SSL certificate auto-renewal (Let’s Encrypt)'
+    ],
+    architecture: 'Git push -> GitHub Actions Runner -> Docker Hub Registry -> AWS EC2 instance -> Nginx reverse proxy',
+    estDuration: '2–3 weeks',
+    portfolioValue: 'Essential showcase project for any DevOps candidate demonstrating real automated operations.'
+  },
+  {
+    id: 'proj-5',
+    title: 'Network Packet Sniffer & Intrusion Detection Tool',
+    career: 'Cybersecurity Analyst',
+    difficulty: 'Intermediate',
+    technologies: ['Python', 'Scapy', 'Wireshark', 'Linux'],
+    skills: ['Networking', 'Linux', 'Python', 'Cybersecurity'],
+    description: 'A custom security script that captures live network traffic, detects port scanning attacks, and logs suspicious payloads.',
+    problemStatement: 'Enterprise networks need lightweight detection scripts to alert when malicious reconnaissance activity begins.',
+    features: [
+      'Live TCP/UDP packet capture and header dissection using Scapy',
+      'Detection rules for SYN flood attacks and sequential port scanning',
+      'Automated email/webhook alerts when abnormal packet frequencies occur',
+      'Exporting suspicious traffic to PCAP files for forensic Wireshark review'
+    ],
+    architecture: 'Linux network interface -> Python raw sockets / Scapy -> Rule evaluation engine -> Alerting logger',
+    estDuration: '2–3 weeks',
+    portfolioValue: 'Highlights deep TCP/IP protocol comprehension and practical security programming skills.'
+  },
+  {
+    id: 'proj-6',
+    title: 'AI Resume & ATS Keyword Matcher',
+    career: 'AI/ML Engineer',
+    difficulty: 'Advanced',
+    technologies: ['Python', 'FastAPI', 'Sentence-Transformers', 'React'],
+    skills: ['Python', 'NLP', 'Deep Learning', 'FastAPI'],
+    description: 'An AI-driven resume evaluation tool that generates semantic similarity scores against job descriptions using vector embeddings.',
+    problemStatement: 'Students send generic resumes that fail Applicant Tracking Systems (ATS) due to vocabulary mismatches.',
+    features: [
+      'PDF text extraction and section parsing (Education, Skills, Experience)',
+      'Cosine similarity evaluation between resume embeddings and job descriptions',
+      'Missing keyword highlighting and bullet-point rewrite recommendations',
+      'Interactive visual dashboard showing match score breakdown'
+    ],
+    architecture: 'React frontend -> FastAPI backend -> HuggingFace Sentence-Transformers model -> Vector math engine',
+    estDuration: '4 weeks',
+    portfolioValue: 'Demonstrates applied NLP, modern embedding techniques, and practical AI product engineering.'
+  },
+  {
+    id: 'proj-7',
+    title: 'Multi-Tenant Cloud Infrastructure as Code',
+    career: 'Cloud Engineer',
+    difficulty: 'Advanced',
+    technologies: ['Terraform', 'AWS VPC', 'AWS ECS', 'RDS PostgreSQL'],
+    skills: ['AWS', 'Terraform', 'Cloud', 'Networking'],
+    description: 'Declarative Terraform infrastructure creating a highly-available, secure multi-tier web application VPC on AWS.',
+    problemStatement: 'Startups require repeatable, version-controlled cloud environments that meet SOC2 security standards.',
+    features: [
+      'Custom VPC with isolated Public, Private, and Database subnets across 2 AZs',
+      'Internet Gateway, NAT Gateways, and strict Security Group firewall rules',
+      'Auto-scaling AWS ECS Fargate cluster fronted by an Application Load Balancer',
+      'Multi-AZ RDS PostgreSQL database with automated backups and encryption'
+    ],
+    architecture: 'Terraform configuration -> AWS CloudFormation/APIs -> Multi-AZ AWS architecture -> CloudWatch monitoring',
+    estDuration: '3–4 weeks',
+    portfolioValue: 'Direct proof of cloud architecture proficiency and production Infrastructure as Code capability.'
+  },
+  {
+    id: 'proj-8',
+    title: 'Fintech Mobile Wallet & Expense Tracker',
+    career: 'Mobile App Developer',
+    difficulty: 'Intermediate',
+    technologies: ['React Native', 'TypeScript', 'Expo', 'AsyncStorage'],
+    skills: ['Mobile', 'React', 'TypeScript', 'UI/UX Design'],
+    description: 'A sleek, cross-platform mobile app for tracking daily expenses, budgets, recurring subscriptions, and category charts.',
+    problemStatement: 'Young adults struggle to budget effectively without a clean, frictionless mobile expense tracker.',
+    features: [
+      'Smooth gestures and swipe actions for transaction deletion and editing',
+      'Interactive monthly spending charts categorized by food, travel, and bills',
+      'Biometric authentication (FaceID/Fingerprint) before viewing sensitive accounts',
+      'Offline-first local storage with instant calculations and CSV export'
+    ],
+    architecture: 'React Native (Expo) -> Zustand global state -> Local SQLite/AsyncStorage -> Victory Native charts',
+    estDuration: '3 weeks',
+    portfolioValue: 'Displays mobile UI polish, gesture handling, device security, and state management.'
+  },
+  {
+    id: 'proj-9',
+    title: 'Complete Healthcare Portal Design System',
+    career: 'UI/UX Designer',
+    difficulty: 'Intermediate',
+    technologies: ['Figma', 'FigJam', 'Design Tokens'],
+    skills: ['Figma', 'Design Systems', 'User Research', 'Prototyping'],
+    description: 'A comprehensive 40+ component design system and high-fidelity prototype for a patient tele-consultation platform.',
+    problemStatement: 'Telehealth apps often confuse elderly patients through poor typographic contrast and convoluted navigation.',
+    features: [
+      'WCAG AAA accessible color palette and responsive type scale',
+      'Modular Figma component library with variants, auto-layout, and interactive states',
+      'End-to-end interactive clickable prototype of doctor booking flow',
+      'Usability test report synthesizing findings from 5 user testing sessions'
+    ],
+    architecture: 'User Research -> Information Architecture -> Figma Component Library -> Interactive Prototype -> Usability Report',
+    estDuration: '2–3 weeks',
+    portfolioValue: 'A standout portfolio piece demonstrating design systems maturity and human-centered design methodology.'
+  },
+  {
+    id: 'proj-10',
+    title: 'Distributed In-Memory Key-Value Store',
+    career: 'Software Developer',
+    difficulty: 'Advanced',
+    technologies: ['Java', 'C++', 'Networking', 'Concurrency'],
+    skills: ['Data Structures', 'Algorithms', 'Operating Systems', 'Networking'],
+    description: 'Build a custom Redis-compatible in-memory caching engine supporting GET/SET commands, TTL expiration, and TCP sockets.',
+    problemStatement: 'Understanding low-level memory layout, network sockets, and concurrency requires building systems from scratch.',
+    features: [
+      'Custom Hash Table implementation with dynamic resizing and chaining',
+      'Multi-threaded non-blocking I/O event loop using epoll/sockets',
+      'Active and passive TTL expiration policies for expired keys',
+      'Command parser compliant with Redis Serialization Protocol (RESP)'
+    ],
+    architecture: 'TCP Client -> Network Socket Event Loop -> RESP Parser -> Thread-Safe Hash Table with RW Locks',
+    estDuration: '4 weeks',
+    portfolioValue: 'Superb project for elite software engineering and FAANG-style systems interviews.'
+  }
+];
+
+export const SEED_RESOURCES: ResourceSeed[] = [
+  {
+    id: 'res-1',
+    title: 'DeepLearning.AI Machine Learning Specialization',
+    type: 'Course',
+    url: 'https://www.coursera.org/specializations/machine-learning-introduction',
+    provider: 'Coursera / Andrew Ng',
+    career: 'AI/ML Engineer',
+    skills: ['Python', 'Machine Learning', 'Mathematics'],
+    difficulty: 'Beginner',
+    isFree: false,
+    description: 'The world-famous foundational course taught by Andrew Ng covering regression, classification, neural networks, and decision trees.'
+  },
+  {
+    id: 'res-2',
+    title: 'PyTorch Official Tutorials & Documentation',
+    type: 'Documentation',
+    url: 'https://pytorch.org/tutorials/',
+    provider: 'PyTorch Foundation',
+    career: 'AI/ML Engineer',
+    skills: ['PyTorch', 'Deep Learning', 'Python'],
+    difficulty: 'Intermediate',
+    isFree: true,
+    description: 'Comprehensive hands-on guides from basic tensors to building custom neural network layers and training models on GPUs.'
+  },
+  {
+    id: 'res-3',
+    title: 'The Odin Project - Full Stack JavaScript',
+    type: 'Course',
+    url: 'https://www.theodinproject.com/',
+    provider: 'The Odin Project',
+    career: 'Full Stack Developer',
+    skills: ['HTML', 'CSS', 'JavaScript', 'React', 'Node.js'],
+    difficulty: 'Beginner',
+    isFree: true,
+    description: 'Renowned open-source curriculum guiding beginners through hands-on project-based web development from scratch.'
+  },
+  {
+    id: 'res-4',
+    title: 'Full Stack Open - University of Helsinki',
+    type: 'Course',
+    url: 'https://fullstackopen.com/en/',
+    provider: 'University of Helsinki',
+    career: 'Full Stack Developer',
+    skills: ['React', 'Node.js', 'Express', 'TypeScript', 'GraphQL'],
+    difficulty: 'Intermediate',
+    isFree: true,
+    description: 'Rigorous deep dive into modern single-page applications, REST APIs, testing, TypeScript, and state management.'
+  },
+  {
+    id: 'res-5',
+    title: 'SQLZoo Interactive SQL Tutorial',
+    type: 'Practice',
+    url: 'https://sqlzoo.net/',
+    provider: 'SQLZoo',
+    career: 'Data Analyst',
+    skills: ['SQL', 'Database Design'],
+    difficulty: 'Beginner',
+    isFree: true,
+    description: 'Interactive browser-based exercises covering SELECT, aggregate functions, nested subqueries, and window functions.'
+  },
+  {
+    id: 'res-6',
+    title: 'Alex The Analyst YouTube Channel',
+    type: 'YouTube',
+    url: 'https://www.youtube.com/@AlexTheAnalyst',
+    provider: 'Alex The Analyst',
+    career: 'Data Analyst',
+    skills: ['SQL', 'Excel', 'Power BI', 'Tableau', 'Python'],
+    difficulty: 'Beginner',
+    isFree: true,
+    description: 'Practical, beginner-friendly roadmaps, portfolio project tutorials, and interview guidance specifically for aspiring data analysts.'
+  },
+  {
+    id: 'res-7',
+    title: 'TryHackMe - Pre Security & Complete Beginner Paths',
+    type: 'Practice',
+    url: 'https://tryhackme.com/',
+    provider: 'TryHackMe',
+    career: 'Cybersecurity Analyst',
+    skills: ['Networking', 'Linux', 'Ethical Hacking', 'Cybersecurity'],
+    difficulty: 'Beginner',
+    isFree: true,
+    description: 'Gamified hands-on cybersecurity labs covering networking basics, Linux commands, web application attacks, and defense.'
+  },
+  {
+    id: 'res-8',
+    title: 'OverTheWire: Bandit Wargame',
+    type: 'Practice',
+    url: 'https://overthewire.org/wargames/bandit/',
+    provider: 'OverTheWire',
+    career: 'Cybersecurity Analyst',
+    skills: ['Linux', 'Networking'],
+    difficulty: 'Beginner',
+    isFree: true,
+    description: 'The golden standard practical challenge series for learning Linux command line navigation, SSH, and file permissions.'
+  },
+  {
+    id: 'res-9',
+    title: 'AWS Skill Builder Official Cloud Quest',
+    type: 'Practice',
+    url: 'https://aws.amazon.com/training/digital/aws-cloud-quest/',
+    provider: 'Amazon Web Services',
+    career: 'Cloud Engineer',
+    skills: ['AWS', 'Cloud', 'Networking'],
+    difficulty: 'Beginner',
+    isFree: true,
+    description: 'Role-playing learning game with actual AWS console labs teaching EC2, S3, IAM, and VPC architectures.'
+  },
+  {
+    id: 'res-10',
+    title: 'Learn DevOps with Nana (TechWorld with Nana)',
+    type: 'YouTube',
+    url: 'https://www.youtube.com/@TechWorldwithNana',
+    provider: 'TechWorld with Nana',
+    career: 'DevOps Engineer',
+    skills: ['Docker', 'Kubernetes', 'CI/CD', 'Terraform'],
+    difficulty: 'Beginner',
+    isFree: true,
+    description: 'Visually crystal-clear animations and tutorials covering Docker, Kubernetes, CI/CD, and DevOps career fundamentals.'
+  },
+  {
+    id: 'res-11',
+    title: 'Refactoring UI Book & Design Principles',
+    type: 'Book',
+    url: 'https://www.refactoringui.com/',
+    provider: 'Adam Wathan & Steve Schoger',
+    career: 'UI/UX Designer',
+    skills: ['Design', 'UI/UX Design', 'CSS'],
+    difficulty: 'Beginner',
+    isFree: false,
+    description: 'Practical, visual playbook teaching developers how to design modern, clean interfaces using hierarchy and spacing.'
+  },
+  {
+    id: 'res-12',
+    title: 'Figma Official Video Academy',
+    type: 'YouTube',
+    url: 'https://www.youtube.com/@Figma',
+    provider: 'Figma',
+    career: 'UI/UX Designer',
+    skills: ['Figma', 'Prototyping', 'Design Systems'],
+    difficulty: 'Beginner',
+    isFree: true,
+    description: 'Official step-by-step masterclasses on Auto Layout, Component Variants, Prototyping, and Design Tokens.'
+  },
+  {
+    id: 'res-13',
+    title: 'NeetCode 150 - Curated Algorithm Roadmap',
+    type: 'Practice',
+    url: 'https://neetcode.io/practice',
+    provider: 'NeetCode',
+    career: 'Software Developer',
+    skills: ['Data Structures', 'Algorithms', 'Python', 'C++', 'Java'],
+    difficulty: 'Intermediate',
+    isFree: true,
+    description: 'The definitive list of 150 LeetCode problems categorized by topic with video visual explanations and optimal code solutions.'
+  },
+  {
+    id: 'res-14',
+    title: 'Designing Data-Intensive Applications',
+    type: 'Book',
+    url: 'https://dataintensive.net/',
+    provider: 'Martin Kleppmann',
+    career: 'Software Developer',
+    skills: ['Database Design', 'Systems', 'Distributed Systems'],
+    difficulty: 'Advanced',
+    isFree: false,
+    description: 'The bible of backend and database engineering, covering replication, partitioning, transactions, and consensus.'
+  },
+  {
+    id: 'res-15',
+    title: 'PostgreSQL Official Documentation',
+    type: 'Documentation',
+    url: 'https://www.postgresql.org/docs/',
+    provider: 'PostgreSQL Global Development Group',
+    career: 'Database Engineer',
+    skills: ['SQL', 'PostgreSQL', 'Database Design'],
+    difficulty: 'Intermediate',
+    isFree: true,
+    description: 'The definitive authority on query optimization, transaction isolation levels, indexing, and internal mechanics.'
+  }
+];
